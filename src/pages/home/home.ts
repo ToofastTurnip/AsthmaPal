@@ -24,4 +24,6 @@ export class HomePage {
     // });
   }
 
+  // Remove page when enter button is pressed
+
 }
