@@ -27,10 +27,9 @@ export class AboutPage {
     });
     toast.onDidDismiss((data, role) => {
       if (role == 'close') {
-        this.storage.clear();
+        this.storage.remove('location');
       }
     });
-    
   }
 
 }
