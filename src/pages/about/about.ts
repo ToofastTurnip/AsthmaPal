@@ -9,7 +9,7 @@ import { ToastController } from 'ionic-angular';
 })
 export class AboutPage {
 
-  knobValues:any = { lower: 100, upper: 2300 }
+  knobValues:any = { lower: 900, upper: 2100 }
   public event = {
     timeStarts: '08:00'
   }
@@ -18,7 +18,7 @@ export class AboutPage {
 
   }
 
-  resetData() {
+  showConfirm() {
     let toast = this.toastCtrl.create({
       message: 'Are you sure?',
       duration: 3000,
@@ -30,6 +30,11 @@ export class AboutPage {
         this.storage.remove('location');
       }
     });
+    toast.present();
+  }
+
+  resetData() {
+    this.storage.remove('location');
   }
 
 }
