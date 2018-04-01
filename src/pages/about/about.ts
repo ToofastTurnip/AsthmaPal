@@ -41,6 +41,7 @@ export class AboutPage {
     toast.present();
   }
 
+  // Reminder timer needs to be made
   // For now, reset data only resets home location so I added line 39 so the app is never without a location (will probably keep that line because the home page may cause null pointer without it)
   // Enter new home location button needed (either prompt alert or instance of please enter page)
   // Low priority: ability to enter symptoms (range in an alert would be sick)
