@@ -24,4 +24,8 @@ export class HomePage {
     });
   }
 
+  // Field to display pollen needed
+  // Field to display pollution needed
+  // Field to display danger level needed
+
 }

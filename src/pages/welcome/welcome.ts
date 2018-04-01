@@ -19,4 +19,8 @@ export class WelcomePage {
     this.navCtrl.pop();
   }
 
+  // Need to add app title
+  // Need to add logo
+  // REMEMBER: The app needs some color lol, looks pretty bland right now (most importantly on this page)
+
 }
