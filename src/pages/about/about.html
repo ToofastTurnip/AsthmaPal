@@ -28,7 +28,7 @@
     </ion-list-header>
     <ion-item>
       <ion-label>Interval</ion-label>
-      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
+      <ion-datetime displayFormat="h:mm" pickerFormat="h mm" minuteValues="0,30" [(ngModel)]="event.timeStarts"></ion-datetime>
     </ion-item>
   </ion-list>
   <button ion-button block (click)="showConfirm()">Reset data</button>

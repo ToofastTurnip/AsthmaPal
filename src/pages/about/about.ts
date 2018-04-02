@@ -19,7 +19,7 @@ export class AboutPage {
 
   knobValues:any = { lower: 900, upper: 2100 }
   public event = {
-    timeStarts: '08:00'
+    timeStarts: '01:00'
   }
 
 constructor(public navCtrl: NavController, private storage: Storage, public toastCtrl: ToastController/*, private localNotifications: LocalNotifications*/) {
