@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { PleaseEnterPage } from '../please-enter/please-enter';
-import { LocalNotifications } from '@ionic-native/local-notifications';
+// import { LocalNotifications } from '@ionic-native/local-notifications';
 
 /**
  * Developer note:
@@ -22,7 +22,7 @@ export class AboutPage {
     timeStarts: '08:00'
   }
 
-  constructor(public navCtrl: NavController, private storage: Storage, public toastCtrl: ToastController) {
+constructor(public navCtrl: NavController, private storage: Storage, public toastCtrl: ToastController/*, private localNotifications: LocalNotifications*/) {
 
   }
 
@@ -42,7 +42,17 @@ export class AboutPage {
     toast.present();
   }
 
-  // Reminder timer needs to be made (delayed notofication loop that gets arguments from range and interval)
+  // notificationLoop() {
+  //   this.localNotifications.schedule({
+  //     id: 1,
+  //     text: "Inhaler!",
+  //     trigger: {at: new Date(new Date().getTime() + 1000)},
+  //     sound: isAndroid ? 'file://sound.mp3': 'file://beep.caf',
+  //   });
+  // }
+  
+
+  // Reminder timer needs to be made (delayed notification loop that gets arguments from range and interval)
   // For now, reset data only resets home location so I added line 39 so the app is never without a location (will probably keep that line because the home page may cause null pointer without it)
   // Enter new home location button needed (either prompt alert or instance of please enter page)
   // Low priority: ability to enter symptoms (range in an alert would be sick)
