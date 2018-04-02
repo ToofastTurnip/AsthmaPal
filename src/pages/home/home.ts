@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { WelcomePage } from '../welcome/welcome';
 import { PleaseEnterPage } from '../please-enter/please-enter';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -16,9 +17,10 @@ export class HomePage {
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage) {
-    this.storage.get('location').then((val) => {
+    this.storage.get('token').then((val) => {
       if (val == null) {
-        this.navCtrl.push(PleaseEnterPage);
+        // this.navCtrl.push(PleaseEnterPage);
+        this.navCtrl.push(LoginPage);
         this.navCtrl.push(WelcomePage);
       }
     });

@@ -24,23 +24,23 @@ export class AboutPage {
 
 constructor(public navCtrl: NavController, private storage: Storage, public toastCtrl: ToastController/*, private localNotifications: LocalNotifications*/) {
 
-  }
+}
 
-  showConfirm() {
-    let toast = this.toastCtrl.create({
-      message: 'Are you sure?',
-      duration: 3000,
-      showCloseButton: true,
-      closeButtonText: 'Yep'
-    });
-    toast.onDidDismiss((data, role) => {
-      if (role == 'close') {
-        this.storage.remove('location');
-      }
-      this.navCtrl.push(PleaseEnterPage);
-    });
-    toast.present();
-  }
+showConfirm() {
+  let toast = this.toastCtrl.create({
+    message: 'Are you sure?',
+    duration: 3000,
+    showCloseButton: true,
+    closeButtonText: 'Yep'
+  });
+  toast.onDidDismiss((data, role) => {
+    if (role == 'close') {
+      this.storage.remove('location');
+    }
+    this.navCtrl.push(PleaseEnterPage);
+  });
+  toast.present();
+}
 
   // notificationLoop() {
   //   this.localNotifications.schedule({
