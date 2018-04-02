@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { PleaseEnterPage } from '../please-enter/please-enter';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 /**
  * Developer note:
