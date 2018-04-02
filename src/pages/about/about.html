@@ -8,8 +8,12 @@
 
 <ion-content padding>
   <ion-list>
+    <ion-item>
+      <ion-label>Inhaler reminder</ion-label>
+      <ion-toggle color="danger" checked="false"></ion-toggle>
+    </ion-item>
     <ion-list-header>
-      Range Set
+      Range for inhaler reminder
     </ion-list-header>
     <ion-item>
       <ion-range dualKnobs="true" min="0" max="2400" step="100" snaps="true" pin="true" [(ngModel)]="knobValues" color="danger">
@@ -20,7 +24,7 @@
   </ion-list>
   <ion-list>
     <ion-list-header>
-      Time Interval Set
+      Interval for inhaler reminder
     </ion-list-header>
     <ion-item>
       <ion-label>Interval</ion-label>

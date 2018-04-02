@@ -1,7 +1,12 @@
 .home{
-    background:color($colors, primary);
-    color:color($colors, light);
+    background:color($colors, asthmaOne);
+    color:color($colors, asthmaTwo);
     margin-top:30px;
+    text-align: center;
+}
+
+.welcome{
+    background:color($colors, medium);
 }
 
 .toolbar-title{
