@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { WelcomePage } from '../welcome/welcome';
-import { PleaseEnterPage } from '../please-enter/please-enter';
+// import { PleaseEnterPage } from '../please-enter/please-enter';   <= don't need with current navigation
 import { LoginPage } from '../login/login';
 
 @Component({

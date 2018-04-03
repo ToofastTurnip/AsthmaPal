@@ -12,9 +12,9 @@
       <ion-label>Inhaler reminder</ion-label>
       <ion-toggle color="danger" checked="false"></ion-toggle>
     </ion-item>
-    <ion-list-header>
-      Range for inhaler reminder
-    </ion-list-header>
+      <ion-list-header>
+        Range for inhaler reminder
+      </ion-list-header>
     <ion-item>
       <ion-range dualKnobs="true" min="0" max="2400" step="100" snaps="true" pin="true" [(ngModel)]="knobValues" color="danger">
         <ion-icon range-left name="sunny"></ion-icon>
@@ -31,5 +31,6 @@
       <ion-datetime displayFormat="h:mm" pickerFormat="h mm" minuteValues="0,30" [(ngModel)]="event.timeStarts"></ion-datetime>
     </ion-item>
   </ion-list>
-  <button ion-button block (click)="showConfirm()">Reset data</button>
+  <button ion-button block (click)="showConfirm()">Set new home location</button>
+  <button ion-button block (click)="deleteAccount()" color="danger">Delete account</button>
 </ion-content>
