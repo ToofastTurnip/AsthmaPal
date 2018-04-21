@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { HttpClientModule} from '@angular/common/http';
+// import { HttpClientModule} from '@angular/common/http'; no ned
 
 @Injectable()
 export class RegisterProvider {

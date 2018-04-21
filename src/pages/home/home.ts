@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { WelcomePage } from '../welcome/welcome';
-// import { PleaseEnterPage } from '../please-enter/please-enter';   <= don't need with current navigation
-import { LoginPage } from '../login/login';
+import { PleaseEnterPage } from '../please-enter/please-enter';
+// import { LoginPage } from '../login/login'; <= no ned
 
 @Component({
   selector: 'page-home',
@@ -19,9 +19,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage) {
     this.storage.get('token').then((val) => {
       if (val == null) {
-        // this.navCtrl.push(PleaseEnterPage);
-        this.navCtrl.push(LoginPage);
-        this.navCtrl.push(WelcomePage);
+        this.navCtrl.push(PleaseEnterPage);
       }
     });
   }
