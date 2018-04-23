@@ -24,11 +24,12 @@ export class HomePage {
   }
 
   constructor(public navCtrl: NavController, private zipcodeProvider: ZipcodeProvider, private airQualityProvider: AirQualityProvider, public navParams: NavParams, private storage:Storage) {
-    // this.storage.get('token').then((val) => {
-    //   if (val == null) {
-    //     this.navCtrl.push(PleaseEnterPage);
-    //   }
-    // });
+    this.storage.get('location').then((val) => {
+      if (val == null) {
+        this.navCtrl.push(PleaseEnterPage);
+        this.navCtrl.push(WelcomePage);
+      }
+    });
     // Token code noted out because no login/register pages in current build^^^
     this.today = new Date();
     var dd = this.today.getDate();
