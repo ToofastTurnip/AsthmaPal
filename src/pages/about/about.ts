@@ -22,42 +22,42 @@ export class AboutPage {
     timeStarts: '01:00'
   }
 
-constructor(public navCtrl: NavController, private storage: Storage, public toastCtrl: ToastController/*, private localNotifications: LocalNotifications*/) {
+  constructor(public navCtrl: NavController, private storage: Storage, public toastCtrl: ToastController/*, private localNotifications: LocalNotifications*/) {
 
-}
+  }
 
-showConfirm() {
-  let toast = this.toastCtrl.create({
-    message: 'Are you sure?',
-    duration: 3000,
-    showCloseButton: true,
-    closeButtonText: 'Yep'
-  });
-  toast.onDidDismiss((data, role) => {
-    if (role == 'close') {
-      this.storage.remove('location');
-    }
-    this.navCtrl.push(PleaseEnterPage);
-  });
-  toast.present();
-}
+  setNewHomeLocation() {
+    let toast = this.toastCtrl.create({
+      message: 'Are you sure?',
+      duration: 3000,
+      showCloseButton: true,
+      closeButtonText: 'Yep'
+    });
+    toast.onDidDismiss((data, role) => {
+      if (role == 'close') {
+        this.storage.remove('location');
+      }
+      this.navCtrl.push(PleaseEnterPage);
+    });
+    toast.present();
+  }
 
-deleteAccount() {
-  let toast = this.toastCtrl.create({
-    message: 'Are you sure?',
-    duration: 3000,
-    showCloseButton: true,
-    closeButtonText: 'Yep'
-  });
-  toast.onDidDismiss((data, role) => {
-    if (role == 'close') {
-      this.storage.remove('location');
-      this.storage.remove('token');
-    }
-    this.navCtrl.push(PleaseEnterPage);
-  });
-  toast.present();
-}
+  deleteAccount() {
+    let toast = this.toastCtrl.create({
+      message: 'Are you sure?',
+      duration: 3000,
+      showCloseButton: true,
+      closeButtonText: 'Yep'
+    });
+    toast.onDidDismiss((data, role) => {
+      if (role == 'close') {
+        this.storage.remove('location');
+        this.storage.remove('token');
+      }
+      this.navCtrl.push(PleaseEnterPage);
+    });
+    toast.present();
+  }
 
   // notificationLoop() {
   //   this.localNotifications.schedule({
