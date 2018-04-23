@@ -19,6 +19,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginProvider } from '../providers/login/login';
 import { RegisterProvider } from '../providers/register/register';
+import { ZipcodeProvider } from '../providers/zipcode/zipcode';
+import { AirQualityProvider } from '../providers/airQuality/airQuality';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { RegisterProvider } from '../providers/register/register';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LocalNotifications,
     LoginProvider,
-    RegisterProvider
+    RegisterProvider,
+    ZipcodeProvider,
+    AirQualityProvider
   ]
 })
 export class AppModule {}
