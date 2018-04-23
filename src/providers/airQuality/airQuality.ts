@@ -13,10 +13,11 @@ export class AirQualityProvider {
     this.url = 'http://www.airnowapi.org/aq/forecast/zipCode/?format=application/json&zipCode=';
   }
 
-  getWeather(zipcode, date){
+  getWeather(zipcode:String, date:String){
+    console.log("airquality ts zipcode get weather method vairable: "+zipcode)
     // if this doesn't work try adding .json to the end of the url
     return this.http.get(this.url+zipcode+'&date='+date+'&distance='+this.distance+'&API_KEY='+this.apikey)
-    .map(res => res);
+      .map(res => res);
   }
 
 }

@@ -14,7 +14,7 @@ export class ZipcodeProvider {
 
   getWeather(city, state){
     return this.http.get(this.url+'/'+state+'/'+city+'.json')
-    .map(res => res);
+      .map(res => res);
   }
 
 }
