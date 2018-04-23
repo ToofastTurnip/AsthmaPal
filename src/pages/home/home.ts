@@ -16,7 +16,7 @@ export class HomePage {
 
   today;
   rawAQ:any;
-  zipcode:string;
+  zipcode:any;
   weather:any;
   location:{
     city: string,
@@ -54,10 +54,9 @@ export class HomePage {
         }
       }
       this.zipcodeProvider.getWeather(this.location.city, this.location.state).subscribe((weather:any) => {
-        this.weather = weather.current_observation;
+        this.weather = weather.current_observation.display_location.zip;
       });
-      this.zipcode = this.weather.zip;
-      this.airQualityProvider.getWeather(this.zipcode, this.today).subscribe((airQuality:any) => {
+      this.airQualityProvider.getWeather(this.weather, this.today).subscribe((airQuality:any) => {
         this.rawAQ = airQuality.AQI;
       });
     });
