@@ -13,7 +13,6 @@ import { AirQualityProvider } from '../../providers/airQuality/airQuality';
 })
 
 export class HomePage {
-
   today;
   rawAQ;
   zipcode;
@@ -40,10 +39,6 @@ export class HomePage {
       mm = '0'+mm
     }
     this.today = yyyy+'-'+mm+'-'+dd;
-
-
-
-    
   }
 
   ionViewWillEnter(){
@@ -60,16 +55,10 @@ export class HomePage {
         this.zipcode = weather.current_observation.display_location.zip;
         console.log("zipcodeprovider get weather home ts method: "+this.zipcode);
         this.airQualityProvider.getWeather(this.zipcode, this.today).subscribe((airQuality:any) => {
-          console.log(airQuality[0].AQI);
-          //this.rawAQ = airQuality.AQI;
+          this.rawAQ = airQuality[0].AQI;
           console.log("if the code even gets here print the rawAQ value: "+this.rawAQ);
         });
       });
-      // console.log("home ts this.zipcode: "+ this.zipcode)
     });
   }
 }
-
-  // Field to display pollen needed
-  // Field to display pollution needed
-  // Field to display danger level needed
