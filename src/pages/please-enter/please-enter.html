@@ -6,12 +6,13 @@
 
 <ion-content padding class="please-enter">
   <ion-grid>
-    <ion-row>
+    <ion-row justify-content-center align-items-center>
       <ion-col width-100>
         <ion-list>
           <div>
             <img src="../../assets/imgs/treasure-map-ocal-diff-colours-hi.png" alt="Map" class="Absolute-Center">
           </div>
+          <div><br><br></div>
           <form (ngSubmit)="saveForm()">
             <ion-item>
               <ion-label fixed>City</ion-label>
@@ -21,7 +22,8 @@
               <ion-label fixed>State</ion-label>
               <ion-input [(ngModel)]="state" name="state" type="text"></ion-input>
             </ion-item>
-            <button ion-button type="submit" block>Save Changes</button>
+            <div><br></div>
+            <button ion-button type="submit" large=true strong=true block>Save Changes</button>
           </form>
         </ion-list>
       </ion-col>

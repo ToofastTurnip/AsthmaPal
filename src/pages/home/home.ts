@@ -15,8 +15,8 @@ import { AirQualityProvider } from '../../providers/airQuality/airQuality';
 export class HomePage {
 
   today;
-  rawAQ:any;
-  zipcode:any;
+  rawAQ;
+  zipcode;
   location:{
     city: string,
     state: string
@@ -29,7 +29,6 @@ export class HomePage {
         this.navCtrl.push(WelcomePage);
       }
     });
-    // Token code noted out because no login/register pages in current build^^^
     this.today = new Date();
     var dd = this.today.getDate();
     var mm = this.today.getMonth()+1;
@@ -41,6 +40,10 @@ export class HomePage {
       mm = '0'+mm
     }
     this.today = yyyy+'-'+mm+'-'+dd;
+
+
+
+    
   }
 
   ionViewWillEnter(){
@@ -56,12 +59,13 @@ export class HomePage {
       this.zipcodeProvider.getWeather(this.location.city, this.location.state).subscribe((weather:any) => {
         this.zipcode = weather.current_observation.display_location.zip;
         console.log("zipcodeprovider get weather home ts method: "+this.zipcode);
+        this.airQualityProvider.getWeather(this.zipcode, this.today).subscribe((airQuality:any) => {
+          console.log(airQuality[0].AQI);
+          //this.rawAQ = airQuality.AQI;
+          console.log("if the code even gets here print the rawAQ value: "+this.rawAQ);
+        });
       });
-      console.log("home ts this.zipcode: "+ this.zipcode)
-      this.airQualityProvider.getWeather(this.zipcode, this.today).subscribe((airQuality:any) => {
-        this.rawAQ = airQuality.AQI;
-        console.log("if the code even gets here print the rawAQ value: "+this.rawAQ);
-      });
+      // console.log("home ts this.zipcode: "+ this.zipcode)
     });
   }
 }
